@@ -18,5 +18,9 @@
     "strings": true
   },
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "cSpell.words": ["daisyui", "grayscale", "merv"],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
 }
