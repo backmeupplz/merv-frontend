@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+@plugin "daisyui" {
+  themes: caramellatte --default;
+}
+@plugin "@tailwindcss/typography";
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
