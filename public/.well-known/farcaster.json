@@ -1,0 +1,18 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjEzNTYsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHgyYjA5NDUwQ0MxODAxOWQyYzUwNWJCY0VDYjI3NDg1RTA0NjlCQzJjIn0",
+    "payload": "eyJkb21haW4iOiJtZXJ2LmZ1biJ9",
+    "signature": "MHg0OGMyZjc3ZTBmNTNjYTkwN2IyZjAxYThjZDczMGFhZTA3YjBkNWQxN2VjNjYzZGEyMGEyYWUwN2VhZmI3Y2ZiNTY1MDJmMjE2ZmU2NWI5NzFkNjY5ZGM2NGY1MDhlOGRiMTc3MDZlZjlmNTgwNDUwMjU5MjFkMTgxZDZiMDJlOTFi"
+  },
+  "frame": {
+    "version": "1",
+    "name": "merv",
+    "iconUrl": "https://merv.fun/frames/logo.jpg",
+    "homeUrl": "https://merv.fun",
+    "imageUrl": "https://merv.fun/frames/image-url.jpg",
+    "buttonTitle": "Join wait list!",
+    "splashImageUrl": "https://merv.fun/frames/splash.png",
+    "splashBackgroundColor": "#FFF7AE",
+    "webhookUrl": "https://backend.merv.fun/farcaster-webhook"
+  }
+}

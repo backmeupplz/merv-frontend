@@ -19,7 +19,15 @@
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "cSpell.words": ["daisyui", "grayscale", "merv"],
+  "cSpell.words": [
+    "daisyui",
+    "grayscale",
+    "merv",
+    "URQL",
+    "viem",
+    "VITE",
+    "wagmi"
+  ],
   "files.associations": {
     "*.css": "tailwindcss"
   }

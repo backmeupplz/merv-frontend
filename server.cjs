@@ -12,6 +12,23 @@ const numCPUs = cpus().length
 process.env.NODE_ENV = 'production'
 const CLIENT_BUILD_DIR = path.join(process.cwd(), 'dist')
 
+console.log(
+  JSON.stringify({
+    version: 'next',
+    imageUrl: 'https://merv.fun/frames/image-url.jpg',
+    button: {
+      title: 'Lay some!',
+      action: {
+        type: 'launch_frame',
+        name: 'Join wait list!',
+        url: 'https://merv.fun',
+        splashImageUrl: 'https://merv.fun/frames/splash.png',
+        splashBackgroundColor: '#FFF7AE',
+      },
+    },
+  })
+)
+
 if (cluster.isPrimary) {
   console.log('🕺🕺🕺🕺🕺🕺🕺🕺🕺')
   console.log('🕺 Starting server...')
@@ -42,6 +59,25 @@ if (cluster.isPrimary) {
   const port = process.env.PORT || 5173
   ViteExpress.config({
     transformer: (html) => {
+      const frame = {
+        version: 'next',
+        imageUrl: 'https://merv.fun/frames/image-url.jpg',
+        button: {
+          title: 'Lay some!',
+          action: {
+            type: 'launch_frame',
+            name: 'Join wait list!',
+            url: 'https://merv.fun',
+            splashImageUrl: 'https://merv.fun/frames/splash.png',
+            splashBackgroundColor: '#FFF7AE',
+          },
+        },
+      }
+      html = html.replace(
+        /<meta\s+name="fc:frame"\s+content='.*?'\s*\/>/,
+        `<meta name="fc:frame" content='${JSON.stringify(frame).replaceAll(/"/g, '&quot;')}' />`
+      )
+      console.log(JSON.stringify(frame))
       return html
     },
   })

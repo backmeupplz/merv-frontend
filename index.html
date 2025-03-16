@@ -34,10 +34,14 @@
       href="/favicon/apple-touch-icon.png"
     />
     <link rel="manifest" href="/favicon/site.webmanifest" />
+    <!-- Frames -->
+    <meta
+      name="fc:frame"
+      content='{"version":"next","imageUrl":"https://merv.fun/frames/image-url.jpg","button":{"title":"Lay some!","action":{"type":"launch_frame","name":"Join wait list!","url":"https://merv.fun","splashImageUrl":"https://merv.fun/frames/splash.png","splashBackgroundColor":"#FFF7AE"}}}'
+    />
   </head>
-  <body>
-    <noscript>Please, turn on JavaScript to see this page.</noscript>
-    <div id="root" />
-    <script type="module" src="/src/index.tsx"></script>
+  <body style="min-height: 100vh; margin: 0">
+    <div id="app"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
