@@ -1,7 +1,8 @@
-import { useLogin } from '@privy-io/react-auth'
 import { createFileRoute } from '@tanstack/react-router'
 import { FrameContext } from 'components/FrameContext'
 import LaunchFrame from 'components/LaunchFrame'
+import Mint from 'components/Mint'
+import useLogin from 'hooks/useLogin'
 import { useContext } from 'preact/compat'
 
 export const Route = createFileRoute('/')({
@@ -78,7 +79,11 @@ function Main() {
       <h2>
         Mint <b>$merv</b>
       </h2>
-      {frameContext?.user.fid ? null : <LaunchFrame />}
+      {frameContext?.user.fid ? (
+        <Mint frameContext={frameContext} />
+      ) : (
+        <LaunchFrame />
+      )}
     </div>
   )
 }
