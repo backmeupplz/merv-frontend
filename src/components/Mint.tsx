@@ -95,7 +95,7 @@ export default function Mint({
         Mint
       </button>
       <button
-        className="btn btn-secondary"
+        className="btn btn-secondary ml-2"
         onClick={() => {
           const encodedText = encodeURIComponent("It's merving time!")
           const encodedUrl = encodeURIComponent('https://merv.fun')
