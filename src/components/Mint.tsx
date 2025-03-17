@@ -4,7 +4,13 @@ import { useState } from 'preact/hooks'
 import toast from 'react-hot-toast'
 import { parseUnits } from 'viem'
 import { base } from 'viem/chains'
-import { useWriteContract } from 'wagmi'
+import {
+  useAccount,
+  useChainId,
+  useConnect,
+  useSwitchChain,
+  useWriteContract,
+} from 'wagmi'
 
 export default function Mint({
   frameContext,
@@ -13,6 +19,10 @@ export default function Mint({
 }) {
   const [amount, setAmount] = useState(0)
   const { writeContractAsync } = useWriteContract()
+  const account = useAccount()
+  const { connectors, connectAsync } = useConnect()
+  const chainId = useChainId()
+  const { switchChainAsync } = useSwitchChain()
   return (
     <>
       {!frameContext.client.added && (
@@ -47,14 +57,26 @@ export default function Mint({
       </fieldset>
       <button
         className="btn btn-primary"
+        disabled={!amount}
         onClick={async () => {
           try {
-            const accounts = await frameSdk.wallet.ethProvider.request({
-              method: 'eth_requestAccounts',
-            })
-            const account = accounts[0]
-            if (!account) {
-              throw new Error('No account found')
+            if (!connectors[0]) {
+              toast.error('No connector found')
+              return
+            }
+            if (!account.isConnected) {
+              const connectResult = await connectAsync({
+                connector: connectors[0],
+                chainId: base.id,
+              })
+
+              if (!connectResult.accounts.length) {
+                toast.error('Unable to connect: no addresses')
+                return
+              }
+            }
+            if (chainId !== base.id) {
+              await switchChainAsync({ chainId: base.id })
             }
             await writeContractAsync({
               abi: mervAbi,
