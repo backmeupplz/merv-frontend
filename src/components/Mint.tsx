@@ -94,6 +94,17 @@ export default function Mint({
       >
         Mint
       </button>
+      <button
+        className="btn btn-secondary"
+        onClick={() => {
+          const encodedText = encodeURIComponent("It's merving time!")
+          const encodedUrl = encodeURIComponent('https://merv.fun')
+          const warpcastUrl = `https://warpcast.com/~/compose?text=${encodedText}&embeds[]=${encodedUrl}`
+          return frameSdk.actions.openUrl(warpcastUrl)
+        }}
+      >
+        merv it?
+      </button>
     </>
   )
 }

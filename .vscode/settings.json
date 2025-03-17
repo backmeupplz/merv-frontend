@@ -23,10 +23,12 @@
     "daisyui",
     "grayscale",
     "merv",
+    "merving",
     "URQL",
     "viem",
     "VITE",
-    "wagmi"
+    "wagmi",
+    "warpcast"
   ],
   "files.associations": {
     "*.css": "tailwindcss"
