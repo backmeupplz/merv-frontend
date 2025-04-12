@@ -1,8 +1,8 @@
-export default function () {
+export default function LaunchMiniApp() {
   return (
     <>
       <p>
-        for now <b>merv</b> is frame-first and can only be used on farcaster
+        for now <b>merv</b> is mini-app-first and can only be used on farcaster
       </p>
       <button
         className="btn btn-primary"

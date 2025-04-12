@@ -13,9 +13,9 @@ import {
 } from 'wagmi'
 
 export default function Mint({
-  frameContext,
+  miniAppContext,
 }: {
-  frameContext: Context.FrameContext
+  miniAppContext: Context.FrameContext
 }) {
   const [amount, setAmount] = useState(0)
   const { writeContractAsync } = useWriteContract()
@@ -25,10 +25,10 @@ export default function Mint({
   const { switchChainAsync } = useSwitchChain()
   return (
     <>
-      {!frameContext.client.added && (
+      {!miniAppContext.client.added && (
         <>
           <p>
-            add frame to get notified when <b>merv</b> launches
+            add mini app to get notified when <b>merv</b> launches
           </p>
           <button
             className="btn btn-primary mb-8"
@@ -36,7 +36,7 @@ export default function Mint({
               return frameSdk.actions.addFrame()
             }}
           >
-            add frame
+            add mini app
           </button>
         </>
       )}

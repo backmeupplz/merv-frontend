@@ -1,7 +1,6 @@
-import { useLogin } from '@privy-io/react-auth'
 import { createFileRoute } from '@tanstack/react-router'
-import { FrameContext } from 'components/FrameContext'
-import LaunchFrame from 'components/LaunchFrame'
+import LaunchMiniApp from 'components/LaunchMiniApp'
+import { MiniAppContext } from 'components/MiniAppContext'
 import Mint from 'components/Mint'
 import { useContext } from 'preact/hooks'
 
@@ -10,19 +9,16 @@ export const Route = createFileRoute('/merv')({
 })
 
 function RouteComponent() {
-  const frameContext = useContext(FrameContext)
-
-  // Needed to login into frame
-  useLogin()
+  const miniAppContext = useContext(MiniAppContext)
 
   return (
     <>
       <p>hi frens! @borodutch here. You may know me as warpcastadmin.eth too</p>
       <p>
-        i'm working on <b>merv</b>, a frame-first farcaster client for power
+        i'm working on <b>merv</b>, a mini-app-first farcaster client for power
         users; the goal is for it to be the primary way of consuming farcaster,
         but no auth or anything required: launch warpcast, then launch{' '}
-        <b>merv</b> right away as a frame
+        <b>merv</b> right away as a mini app
       </p>
       <ul>
         <li>multiaccount-first</li>
@@ -77,10 +73,10 @@ function RouteComponent() {
       <h2>
         Mint <b>$merv</b>
       </h2>
-      {frameContext?.user.fid ? (
-        <Mint frameContext={frameContext} />
+      {miniAppContext.context?.user.fid ? (
+        <Mint miniAppContext={miniAppContext.context} />
       ) : (
-        <LaunchFrame />
+        <LaunchMiniApp />
       )}
     </>
   )

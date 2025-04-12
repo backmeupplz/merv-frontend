@@ -1,7 +1,9 @@
 import { graphql } from 'gql.tada'
 
-export const loginWithPasswordMutation = graphql(`
-  mutation loginWithPassword($password: String!) {
-    loginWithPassword(password: $password)
+export const loginMutation = graphql(`
+  mutation login($message: String!, $signature: String!, $nonce: String!) {
+    login(message: $message, signature: $signature, nonce: $nonce) {
+      token
+    }
   }
 `)
