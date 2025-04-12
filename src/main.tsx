@@ -2,11 +2,13 @@ import { QueryClientProvider } from '@tanstack/react-query'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import MiniAppContextProvider from 'components/MiniAppContext'
 import queryClient from 'helpers/reactQueryConfig'
+import wagmiConfig from 'helpers/wagmiConfig'
 import useURQLClient from 'hooks/useURQLClient'
 import { render } from 'preact'
 import { Toaster } from 'react-hot-toast'
 import { routeTree } from 'routeTree.gen'
 import { Provider as UrqlProvider } from 'urql'
+import { WagmiProvider } from 'wagmi'
 
 // Set up a Router instance
 const router = createRouter({
@@ -34,10 +36,12 @@ if (!rootElement.innerHTML) {
   render(
     <RootGQLWrapper>
       <QueryClientProvider client={queryClient}>
-        <MiniAppContextProvider>
-          <Toaster />
-          <RouterProvider router={router} />
-        </MiniAppContextProvider>
+        <WagmiProvider config={wagmiConfig}>
+          <MiniAppContextProvider>
+            <Toaster />
+            <RouterProvider router={router} />
+          </MiniAppContextProvider>
+        </WagmiProvider>
       </QueryClientProvider>
     </RootGQLWrapper>,
     rootElement
