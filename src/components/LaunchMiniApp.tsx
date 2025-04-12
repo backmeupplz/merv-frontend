@@ -8,7 +8,7 @@ export default function LaunchMiniApp() {
         className="btn btn-primary"
         onClick={() => {
           window.open(
-            'https://warpcast.com/~/frames/launch?domain=merv.fun',
+            'https://warpcast.com/~/mini-apps/launch?domain=merv.fun',
             '_blank'
           )
         }}
