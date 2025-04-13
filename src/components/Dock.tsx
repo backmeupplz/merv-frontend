@@ -21,8 +21,8 @@ export default function Dock() {
         </button>
       </Link>
       <Link
-        to="/users"
-        className={location.pathname === '/users' ? 'dock-active' : ''}
+        to="/accounts"
+        className={location.pathname === '/accounts' ? 'dock-active' : ''}
       >
         <button>
           <Users />
