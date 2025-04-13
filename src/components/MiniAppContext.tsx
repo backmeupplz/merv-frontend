@@ -1,5 +1,6 @@
 import miniAppSdk, { Context } from '@farcaster/frame-sdk'
-import { useSetToken } from 'atoms/tokenAtom'
+import { tokenAtom, useSetToken } from 'atoms/tokenAtom'
+import { useAtomValue } from 'jotai'
 import {
   createContext,
   PropsWithChildren,
@@ -24,9 +25,11 @@ export default function MiniAppContextProvider({
   const [authenticated, setAuthenticated] = useState(false)
   const [, login] = useMutation(loginMutation)
   const setToken = useSetToken()
+  const token = useAtomValue(tokenAtom)
   useEffect(() => {
     async function loginToMerv(context?: Context.FrameContext) {
       if (!context?.user.fid) {
+        setReady(true)
         return
       }
       const nonce = Math.random().toString(36).substring(2, 17)
@@ -38,6 +41,7 @@ export default function MiniAppContextProvider({
           nonce,
           signature,
           message,
+          domain: window.location.host,
         })
         if (error) {
           throw new Error(error.message)
@@ -53,16 +57,18 @@ export default function MiniAppContextProvider({
         setAuthenticated(false)
       } finally {
         setReady(true)
-        await miniAppSdk.actions.ready()
       }
     }
     async function loadContext() {
       const context = await miniAppSdk.context
-      await loginToMerv(context)
+      if (!token) {
+        await loginToMerv(context)
+      }
       setContext(context)
+      await miniAppSdk.actions.ready()
     }
     void loadContext()
-  }, [login, setToken])
+  }, [login, setToken, token])
   return (
     <MiniAppContext.Provider value={{ context, ready, authenticated }}>
       {children}

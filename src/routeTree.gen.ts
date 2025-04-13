@@ -11,21 +11,21 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as UsersImport } from './routes/users'
 import { Route as MervImport } from './routes/merv'
+import { Route as AccountsImport } from './routes/accounts'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
 
-const UsersRoute = UsersImport.update({
-  id: '/users',
-  path: '/users',
-  getParentRoute: () => rootRoute,
-} as any)
-
 const MervRoute = MervImport.update({
   id: '/merv',
   path: '/merv',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AccountsRoute = AccountsImport.update({
+  id: '/accounts',
+  path: '/accounts',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -46,18 +46,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/accounts': {
+      id: '/accounts'
+      path: '/accounts'
+      fullPath: '/accounts'
+      preLoaderRoute: typeof AccountsImport
+      parentRoute: typeof rootRoute
+    }
     '/merv': {
       id: '/merv'
       path: '/merv'
       fullPath: '/merv'
       preLoaderRoute: typeof MervImport
-      parentRoute: typeof rootRoute
-    }
-    '/users': {
-      id: '/users'
-      path: '/users'
-      fullPath: '/users'
-      preLoaderRoute: typeof UsersImport
       parentRoute: typeof rootRoute
     }
   }
@@ -67,42 +67,42 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/accounts': typeof AccountsRoute
   '/merv': typeof MervRoute
-  '/users': typeof UsersRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/accounts': typeof AccountsRoute
   '/merv': typeof MervRoute
-  '/users': typeof UsersRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/accounts': typeof AccountsRoute
   '/merv': typeof MervRoute
-  '/users': typeof UsersRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/merv' | '/users'
+  fullPaths: '/' | '/accounts' | '/merv'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/merv' | '/users'
-  id: '__root__' | '/' | '/merv' | '/users'
+  to: '/' | '/accounts' | '/merv'
+  id: '__root__' | '/' | '/accounts' | '/merv'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccountsRoute: typeof AccountsRoute
   MervRoute: typeof MervRoute
-  UsersRoute: typeof UsersRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccountsRoute: AccountsRoute,
   MervRoute: MervRoute,
-  UsersRoute: UsersRoute,
 }
 
 export const routeTree = rootRoute
@@ -116,18 +116,18 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/merv",
-        "/users"
+        "/accounts",
+        "/merv"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
+    "/accounts": {
+      "filePath": "accounts.tsx"
+    },
     "/merv": {
       "filePath": "merv.tsx"
-    },
-    "/users": {
-      "filePath": "users.tsx"
     }
   }
 }

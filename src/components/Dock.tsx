@@ -4,12 +4,11 @@ import OK from 'icons/OK'
 import Users from 'icons/Users'
 
 export default function Dock() {
-  // Get active path
   const location = useLocation()
   return (
     <div className="dock dock-xs">
       <Link to="/" className={location.pathname === '/' ? 'dock-active' : ''}>
-        <button className="dock-active">
+        <button className="cursor-pointer">
           <OK />
         </button>
       </Link>
@@ -17,7 +16,7 @@ export default function Dock() {
         to="/merv"
         className={location.pathname === '/merv' ? 'dock-active' : ''}
       >
-        <button>
+        <button className=" cursor-pointer">
           <Home />
         </button>
       </Link>

@@ -4,13 +4,14 @@
 export type introspection_types = {
     'Boolean': unknown;
     'DateTimeISO': unknown;
+    'Float': unknown;
     'ID': unknown;
     'Int': unknown;
     'LoginResponse': { kind: 'OBJECT'; name: 'LoginResponse'; fields: { 'token': { name: 'token'; type: { kind: 'NON_NULL'; name: never; ofType: { kind: 'SCALAR'; name: 'String'; ofType: null; }; } }; 'user': { name: 'user'; type: { kind: 'NON_NULL'; name: never; ofType: { kind: 'OBJECT'; name: 'User'; ofType: null; }; } }; }; };
     'Mutation': { kind: 'OBJECT'; name: 'Mutation'; fields: { 'login': { name: 'login'; type: { kind: 'NON_NULL'; name: never; ofType: { kind: 'OBJECT'; name: 'LoginResponse'; ofType: null; }; } }; }; };
     'Query': { kind: 'OBJECT'; name: 'Query'; fields: { 'getMe': { name: 'getMe'; type: { kind: 'NON_NULL'; name: never; ofType: { kind: 'OBJECT'; name: 'User'; ofType: null; }; } }; }; };
     'String': unknown;
-    'User': { kind: 'OBJECT'; name: 'User'; fields: { 'createdAt': { name: 'createdAt'; type: { kind: 'NON_NULL'; name: never; ofType: { kind: 'SCALAR'; name: 'DateTimeISO'; ofType: null; }; } }; 'fid': { name: 'fid'; type: { kind: 'NON_NULL'; name: never; ofType: { kind: 'SCALAR'; name: 'Int'; ofType: null; }; } }; 'id': { name: 'id'; type: { kind: 'NON_NULL'; name: never; ofType: { kind: 'SCALAR'; name: 'ID'; ofType: null; }; } }; 'updatedAt': { name: 'updatedAt'; type: { kind: 'NON_NULL'; name: never; ofType: { kind: 'SCALAR'; name: 'DateTimeISO'; ofType: null; }; } }; }; };
+    'User': { kind: 'OBJECT'; name: 'User'; fields: { 'createdAt': { name: 'createdAt'; type: { kind: 'NON_NULL'; name: never; ofType: { kind: 'SCALAR'; name: 'DateTimeISO'; ofType: null; }; } }; 'fid': { name: 'fid'; type: { kind: 'NON_NULL'; name: never; ofType: { kind: 'SCALAR'; name: 'Int'; ofType: null; }; } }; 'id': { name: 'id'; type: { kind: 'NON_NULL'; name: never; ofType: { kind: 'SCALAR'; name: 'ID'; ofType: null; }; } }; 'unclaimedMerv': { name: 'unclaimedMerv'; type: { kind: 'NON_NULL'; name: never; ofType: { kind: 'SCALAR'; name: 'Float'; ofType: null; }; } }; 'updatedAt': { name: 'updatedAt'; type: { kind: 'NON_NULL'; name: never; ofType: { kind: 'SCALAR'; name: 'DateTimeISO'; ofType: null; }; } }; }; };
 };
 
 /** An IntrospectionQuery representation of your schema.
