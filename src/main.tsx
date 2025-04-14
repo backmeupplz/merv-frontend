@@ -1,6 +1,7 @@
 import { QueryClientProvider } from '@tanstack/react-query'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import MiniAppContextProvider from 'components/MiniAppContext'
+import Modals from 'components/modals'
 import queryClient from 'helpers/reactQueryConfig'
 import wagmiConfig from 'helpers/wagmiConfig'
 import useURQLClient from 'hooks/useURQLClient'
@@ -40,6 +41,7 @@ if (!rootElement.innerHTML) {
           <MiniAppContextProvider>
             <Toaster />
             <RouterProvider router={router} />
+            <Modals />
           </MiniAppContextProvider>
         </WagmiProvider>
       </QueryClientProvider>

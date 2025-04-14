@@ -25,6 +25,7 @@
     "morgan": "^1.10.0",
     "preact": "^10.26.5",
     "react-hot-toast": "^2.5.2",
+    "react-qr-code": "^2.0.15",
     "urql": "^4.2.2",
     "vite-express": "^0.20.0",
     "wagmi": "^2.14.16"
