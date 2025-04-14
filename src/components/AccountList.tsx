@@ -12,7 +12,7 @@ export default function AccountList() {
     [client]
   )
 
-  const { data: signersData, refetch } = useQuery({
+  const { data: signersData } = useQuery({
     queryKey: ['mySigners'],
     queryFn: fetchSigners,
     refetchOnWindowFocus: true,
