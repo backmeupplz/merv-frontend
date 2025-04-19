@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { needsNewSignerAtom } from 'atoms/signerRequestAtom'
 import AccountList from 'components/AccountList'
+import ApiKeys from 'components/ApiKeys'
 import { ModalName, showModal } from 'components/modals'
 import { useSetAtom } from 'jotai'
 
@@ -26,6 +27,7 @@ function RouteComponent() {
         Add Account
       </button>
       <AccountList />
+      <ApiKeys />
     </div>
   )
 }

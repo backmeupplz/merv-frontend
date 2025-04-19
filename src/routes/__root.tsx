@@ -10,7 +10,7 @@ function Root() {
   return miniAppContext.context?.user.fid ? (
     <>
       <Navbar />
-      <div className="container prose mx-auto max-w-prose pt-4 pb-16 px-3">
+      <div className="container mx-auto max-w-prose pt-4 pb-16 px-3">
         <Outlet />
       </div>
       <Dock />

@@ -23,14 +23,14 @@ function Main() {
     refetchInterval: 10_000,
   })
   return (
-    <div className="flex flex-col p-3 w-full items-center">
+    <div className="flex flex-col p-3 w-full items-center gap-2">
       <p className="font-bold text-2xl">Your $merv rewards:</p>
-      <p className="font-extrabold text-6xl -mt-6">
+      <p className="font-extrabold text-6xl">
         {data?.data?.getMe.unclaimedMerv === undefined
           ? '🤔'
           : Math.round(data?.data?.getMe.unclaimedMerv || 0)}
       </p>
-      <p className="font-extrabold text-3xl -mt-20">$merv</p>
+      <p className="font-extrabold text-3xl">$merv</p>
       <div className="flex flex-row flex-wrap gap-2 justify-center">
         <Link to="/accounts">
           <button className="btn btn-primary">Get more $merv for free</button>

@@ -48,3 +48,33 @@ export const claimMervReward = graphql(`
     }
   }
 `)
+
+export const createApiKey = graphql(`
+  mutation createApiKey {
+    createApiKey {
+      id
+      createdAt
+      updatedAt
+      token
+    }
+  }
+`)
+
+export const getMyApiKeys = graphql(`
+  query getMyApiKeys {
+    getMyApiKeys {
+      id
+      createdAt
+      updatedAt
+      token
+      userAgent
+      lastUsedAt
+    }
+  }
+`)
+
+export const deleteApiKey = graphql(`
+  mutation deleteApiKey($id: String!) {
+    deleteApiKey(id: $id)
+  }
+`)

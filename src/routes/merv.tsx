@@ -11,7 +11,7 @@ function RouteComponent() {
   const { context } = useContext(MiniAppContext)
 
   return (
-    <>
+    <div className="prose">
       <p>hi frens! @borodutch here. You may know me as warpcastadmin.eth too</p>
       <p>
         i'm working on <b>merv</b>, a mini-app-first farcaster client for power
@@ -73,6 +73,6 @@ function RouteComponent() {
         Mint <b>$merv</b>
       </h2>
       {context && <Mint miniAppContext={context} />}
-    </>
+    </div>
   )
 }
