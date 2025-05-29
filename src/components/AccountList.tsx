@@ -79,7 +79,7 @@ export default function AccountList() {
                   }
                 }}
               >
-                {signer.castCompleted
+                {signer.proCastCompleted
                   ? '$PRO reward claimed!'
                   : claiming
                     ? 'Claiming'
