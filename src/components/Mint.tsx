@@ -100,7 +100,7 @@ export default function Mint({
           onClick={() => {
             const encodedText = encodeURIComponent("It's merving time!")
             const encodedUrl = encodeURIComponent('https://merv.fun')
-            const warpcastUrl = `https://warpcast.com/~/compose?text=${encodedText}&embeds[]=${encodedUrl}`
+            const warpcastUrl = `https://farcaster.xyz/~/compose?text=${encodedText}&embeds[]=${encodedUrl}`
             return frameSdk.actions.openUrl(warpcastUrl)
           }}
         >

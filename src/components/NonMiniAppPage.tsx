@@ -15,7 +15,7 @@ export default function NonMiniAppPage() {
           className="btn btn-secondary mt-4"
           onClick={() => {
             window.open(
-              'https://warpcast.com/~/mini-apps/launch?domain=merv.fun',
+              'https://farcaster.xyz/miniapps/5HjQbj18YBrE/merv',
               '_blank'
             )
           }}
