@@ -33,7 +33,9 @@ function Main() {
       <p className="font-extrabold text-3xl">$merv</p>
       <div className="flex flex-row flex-wrap gap-2 justify-center">
         <Link to="/accounts">
-          <button className="btn btn-primary">Get more $merv for free</button>
+          <button className="btn btn-primary">
+            Get more $merv and $pro for free
+          </button>
         </Link>
         <Link to="/merv">
           <button className="btn btn-primary">Mint $merv</button>
