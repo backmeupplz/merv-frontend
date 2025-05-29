@@ -6,7 +6,12 @@ import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
   {
-    ignores: ['**/tailwind.config.js', '**/.yarn/**', '**/node_modules/**'],
+    ignores: [
+      '**/tailwind.config.js',
+      '**/.yarn/**',
+      '**/node_modules/**',
+      'src/graphql-env.d.ts',
+    ],
   },
   tseslint.configs.recommended,
   tseslint.configs.strict,
