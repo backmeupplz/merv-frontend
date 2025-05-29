@@ -44,6 +44,9 @@ export default function AccountList() {
                     const reward = await claimMervRewardMutation({
                       signerId: signer.id,
                     })
+                    if (reward.error) {
+                      throw new Error(reward.error.message)
+                    }
                     toast.success(
                       `You got +${reward.data?.claimMervReward.amount} $merv!`
                     )
@@ -69,6 +72,9 @@ export default function AccountList() {
                     const reward = await claimProRewardMutation({
                       signerId: signer.id,
                     })
+                    if (reward.error) {
+                      throw new Error(reward.error.message)
+                    }
                     toast.success(
                       `You got +${reward.data?.claimProReward.amount} $PRO!`
                     )
