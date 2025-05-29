@@ -17,6 +17,10 @@ function RouteComponent() {
         <span className="font-extrabold">Earn $merv</span> by adding more
         accounts below, and casting "it's merving time" from them!
       </div>
+      <div>
+        <span className="font-extrabold">Earn $PRO</span> by adding more
+        accounts below, and casting "i ratify merv" from them!
+      </div>
       <button
         className="btn btn-primary w-full"
         onClick={() => {

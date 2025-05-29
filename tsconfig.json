@@ -30,7 +30,7 @@
     "plugins": [
       {
         "name": "gql.tada/ts-plugin",
-        "schema": "http://localhost:1337/",
+        "schema": "https://backend.merv.fun/",
         "tadaOutputLocation": "./src/graphql-env.d.ts"
       }
     ]

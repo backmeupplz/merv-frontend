@@ -36,6 +36,7 @@ export const getMySigners = graphql(`
       fid
       username
       castCompleted
+      proCastCompleted
     }
   }
 `)
@@ -43,6 +44,15 @@ export const getMySigners = graphql(`
 export const claimMervReward = graphql(`
   mutation claimMervReward($signerId: String!) {
     claimMervReward(signerId: $signerId) {
+      id
+      amount
+    }
+  }
+`)
+
+export const claimProReward = graphql(`
+  mutation claimProReward($signerId: String!) {
+    claimProReward(signerId: $signerId) {
       id
       amount
     }
