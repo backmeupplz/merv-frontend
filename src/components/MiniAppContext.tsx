@@ -35,6 +35,7 @@ export default function MiniAppContextProvider({
       const nonce = Math.random().toString(36).substring(2, 17)
       try {
         const { signature, message } = await miniAppSdk.actions.signIn({
+          acceptAuthAddress: true,
           nonce,
         })
         const { data, error } = await login({
