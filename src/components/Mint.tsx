@@ -52,7 +52,7 @@ export default function Mint({
           onInput={(e) => setAmount(+(e.target as HTMLInputElement).value)}
         />
         <p className="fieldset-label">
-          It will get you <b>{Math.floor(amount * 10500)} $merv</b>
+          It will get you <b>{Math.floor(amount * 8925)} $merv</b>
         </p>
       </fieldset>
       <div className="flex flex-row gap-2">
