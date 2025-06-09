@@ -51,7 +51,7 @@ function RouteComponent() {
           launches
         </li>
         <li>
-          you get 10,500 <b>$merv</b> for 1 eth
+          you get 8925 <b>$merv</b> for 1 eth
         </li>
         <li>
           50% of eth goes into lp when <b>merv</b> launches
