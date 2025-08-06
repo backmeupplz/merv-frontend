@@ -7,7 +7,7 @@ const cluster = require('cluster')
 const { cpus } = require('os')
 const ViteExpress = require('vite-express')
 
-const numCPUs = cpus().length
+const numCPUs = 1 // cpus().length
 
 process.env.NODE_ENV = 'production'
 const CLIENT_BUILD_DIR = path.join(process.cwd(), 'dist')
